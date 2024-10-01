@@ -1,5 +1,9 @@
 # PersonaMath: Enhancing Math Reasoning through Persona-Driven Data Augmentation
 
+<p align="center">
+🤗 <a href="https://huggingface.co/datasets/jingluo/PersonaMathQA" target="_blank">Dataset</a> • 📃 <a href="" target="_blank">Paper</a><br>
+</p>
+
 <p align="center" width="100%">
 <a ><img src="images/personamath.png" alt="personamath" style="width: 80%; align: middle; display: block; margin: auto;">
 <img src="images/gsm8k.png" alt="gsm8k" style="width: 45%; display: block; margin: auto;">

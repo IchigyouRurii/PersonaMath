@@ -11,7 +11,7 @@
 #    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
-#    Modified by Zheng Yuan and Hongyi Yuan
+#    Modified by Jing Luo, Longze Chen and Liang Zhu
 
 import os
 import copy
@@ -26,8 +26,8 @@ from transformers import Trainer
 import argparse
 import json
 import random;random.seed(42)
-# import deepspeed
-# deepspeed.ops.op_builder.CPUAdamBuilder().load()
+import deepspeed
+deepspeed.ops.op_builder.CPUAdamBuilder().load()
 
 def _make_r_io_base(f, mode: str):
     if not isinstance(f, io.IOBase):
@@ -175,16 +175,9 @@ class SupervisedDataset(Dataset):
 
         # logging.warning("Formatting inputs...")
         prompt_input, prompt_no_input = PROMPT_DICT["prompt_input"], PROMPT_DICT["prompt_no_input"]
-        # print(list_data_dict[0])
-        # if 'instruction' in list_data_dict[0]:
-        #     pass
-        # else:
-        #     def get_input(query):
-        #         if query.find('\n') == -1:
-        #             return ''
-        #         return '\n'.join(query.split('\n')[1:])
+        
         list_data_dict = [{'instruction':data['problem'], 'input':"", 'output':data['response']} for data in list_data_dict]
-        # import ipdb; ipdb.set_trace()
+        
         sources = [
             prompt_input.format_map(example) if example.get("input", "") != "" else prompt_no_input.format_map(example)
             for example in list_data_dict

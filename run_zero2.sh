@@ -1,14 +1,14 @@
 export CUDA_VISIBLE_DEVICES=4,5,6,7
 export NCCL_P2P_LEVEL="NVL" 
-export MODEL_PATH='/data/luojing/Qwen2.5-7B'
-export SAVE_PATH='/home/luojing/ProjectFile/Qwen2.5-7B-trained'
+export MODEL_PATH=''
+export SAVE_PATH=''
 export DS_SKIP_CUDA_CHECK=1
 
-config_file="/home/luojing/accelerator_config_zero2.yaml"
+config_file="/accelerator_config_zero2.yaml"
 
-accelerate launch --num_processes 4 --main_process_port 12345 --config_file $config_file Train.py \
+accelerate launch --num_processes 4 --main_process_port 12345 --config_file $config_file Train_zero2.py \
     --model_name_or_path $MODEL_PATH \
-    --data_path "/home/luojing/ProjectFile/Training_ALL.json" \
+    --data_path "/PersonaMathQA.json" \
     --data_length 10000000 \
     --output_dir $SAVE_PATH \
     --num_train_epochs 3 \

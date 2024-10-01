@@ -58,13 +58,9 @@ Run the following code to implement **DeepSpeed ZeRO-3** Stage for model trainin
 bash run_zero3.sh
 ```
 
-We use vLLM to evaluate our model. Run the following code to evaluate on GSM8K: 
+We use vLLM to evaluate our model. Run the following code to evaluate on GSM8K and MATH: 
 ```
 CUDA_VISIBLE_DEVICES=0 python3 eval_gsm8k.py --model /path/to/model --data_file /GSM8K_test.jsonl
-```
-
-and use the following code for MATH:
-```
 CUDA_VISIBLE_DEVICES=0 python3 eval_math.py --model /path/to/model --data_file /MATH_test.jsonl
 ```
 

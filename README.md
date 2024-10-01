@@ -34,3 +34,4 @@
 | :rocket: **PersonaMath-LLaMA-2-7B**        | **68.7**     | **24.2**  |
 | :rocket: **PersonaMath-LLaMA-2-13B**        | **78.6**     | **28.5**   |
 | :rocket: **PersonaMath-LLaMA-3.1-8B**      | **76.6**     | **36.6**   |
+| :rocket: **PersonaMath-Qwen2.5-7B**      | **84.3**     | **56.6**   |

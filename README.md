@@ -35,3 +35,33 @@
 | :rocket: **PersonaMath-LLaMA-2-13B**        | **78.6**     | **28.5**   |
 | :rocket: **PersonaMath-LLaMA-3.1-8B**      | **76.6**     | **36.6**   |
 | :rocket: **PersonaMath-Qwen2.5-7B**      | **84.3**     | **56.6**   |
+
+## Usage
+
+Our PersonaMathQA dataset is available on [Hugging Face](https://huggingface.co/datasets/jingluo/PersonaMathQA). You can load it by running the following code:
+```python
+from datasets import load_dataset
+ds = load_dataset("jingluo/PersonaMathQA")
+```
+
+Run the following code to implement **DeepSpeed ZeRO-2** Stage for model training:
+```bash
+bash run_zero2.sh
+```
+
+Run the following code to implement **DeepSpeed ZeRO-3** Stage for model training:
+```bash
+bash run_zero3.sh
+```
+
+We use vLLM to evaluate our model. Run the following code to evaluate on GSM8K: 
+```
+CUDA_VISIBLE_DEVICES=0 python3 eval_gsm8k.py --model /path/to/model --data_file /GSM8K_test.jsonl
+```
+
+and use the following code for MATH:
+```
+CUDA_VISIBLE_DEVICES=0 python3 eval_math.py --model /path/to/model --data_file /MATH_test.jsonl
+```
+
+Thanks for the open source code of [MetaMath](https://github.com/meta-math/MetaMath/tree/main). Some of our codes are based on them.

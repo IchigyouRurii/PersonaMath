@@ -4,7 +4,7 @@ export MODEL_PATH=''
 export SAVE_PATH=''
 export DS_SKIP_CUDA_CHECK=1
 
-config_file="/home/luojing/accelerator_config_zero3.yaml"
+config_file="/accelerator_config_zero3.yaml"
 
 accelerate launch --num_processes 4 --main_process_port 12345 --config_file $config_file train.py \
     --model_name_or_path $MODEL_PATH \

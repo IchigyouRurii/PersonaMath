@@ -6,7 +6,7 @@ export DS_SKIP_CUDA_CHECK=1
 
 config_file="/accelerator_config_zero2.yaml"
 
-accelerate launch --num_processes 4 --main_process_port 12345 --config_file $config_file Train_zero2.py \
+accelerate launch --num_processes 4 --main_process_port 12345 --config_file $config_file train.py \
     --model_name_or_path $MODEL_PATH \
     --data_path "/PersonaMathQA.json" \
     --data_length 10000000 \

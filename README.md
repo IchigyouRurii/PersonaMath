@@ -65,3 +65,19 @@ CUDA_VISIBLE_DEVICES=0 python3 eval_math.py --model /path/to/model --data_file /
 ```
 
 Thanks for the open source code of [MetaMath](https://github.com/meta-math/MetaMath/tree/main). Some of our codes are based on them.
+
+## Citation
+
+If you find this repository helpful, please consider citing the following paper:
+
+```bib
+@misc{luo2024personamathenhancingmathreasoning,
+      title={PersonaMath: Enhancing Math Reasoning through Persona-Driven Data Augmentation}, 
+      author={Jing Luo and Run Luo and Longze Chen and Liang Zhu and Chang Ao and Jiaming Li and Yukun Chen and Xin Cheng and Wen Yang and Jiayuan Su and Chengming Li and Min Yang},
+      year={2024},
+      eprint={2410.01504},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2410.01504}, 
+}
+```

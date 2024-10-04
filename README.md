@@ -1,7 +1,7 @@
 # PersonaMath: Enhancing Math Reasoning through Persona-Driven Data Augmentation
 
 <p align="center">
-🤗 <a href="https://huggingface.co/datasets/jingluo/PersonaMathQA" target="_blank">Dataset</a> • 📃 <a href="" target="_blank">Paper</a><br>
+🤗 <a href="https://huggingface.co/datasets/jingluo/PersonaMathQA" target="_blank">Dataset</a> • 📃 <a href="https://arxiv.org/abs/2410.01504" target="_blank">Paper</a><br>
 </p>
 
 <p align="center" width="100%">

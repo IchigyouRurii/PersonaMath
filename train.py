@@ -26,8 +26,8 @@ from transformers import Trainer
 import argparse
 import json
 import random;random.seed(42)
-import deepspeed
-deepspeed.ops.op_builder.CPUAdamBuilder().load()
+# import deepspeed
+# deepspeed.ops.op_builder.CPUAdamBuilder().load()
 
 def _make_r_io_base(f, mode: str):
     if not isinstance(f, io.IOBase):
@@ -176,7 +176,7 @@ class SupervisedDataset(Dataset):
         # logging.warning("Formatting inputs...")
         prompt_input, prompt_no_input = PROMPT_DICT["prompt_input"], PROMPT_DICT["prompt_no_input"]
         
-        list_data_dict = [{'instruction':data['problem'], 'input':"", 'output':data['response']} for data in list_data_dict]
+        list_data_dict = [{'instruction':data['question'], 'input':"", 'output':data['response']} for data in list_data_dict]
         
         sources = [
             prompt_input.format_map(example) if example.get("input", "") != "" else prompt_no_input.format_map(example)
